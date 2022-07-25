@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gilberto Fernández</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+	<link rel="manifest" href="./images/site.webmanifest">
+	<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+	<section id="left">
+		<nav>
+			<a href="https://github.com/gfernan24373" target="_blank" class="nav-item">
+				<i class="fa-brands fa-github"></i>
+			</a>
+			<a href="https://www.linkedin.com/in/gilberto-fernandez-b15388120/" target="_blank" class="nav-item">
+				<i class="fa-brands fa-linkedin"></i>
+			</a>
+			<a href="https://wa.me/message/CUDGT6YXNXNIJ1" target="_blank" class="nav-item">
+				<i class="fa-brands fa-whatsapp-square"></i>
+			</a>
+			<button id="copy-email" class="nav-item"><i class="fa-solid fa-envelope"></i></button>
+			<a href="https://gilbertofernandez18.wixsite.com/project1/blog" class="nav-item"><i class="fa-brands fa-wix"></i></a>
+			<a href="./resume.html" class="nav-item"><i class="fa-solid fa-file"></i></a>
+		</nav>
+		<div class="subgrid-left">
+			<h1 class="subtitle">SOBRE MÍ</h1>
+			<div class="card">
+				<p>32 Años de edad, Ingeniero de Sistemas con 3 años de experiencia en Service Desk en proyectos de Ingeniería, con más de un año dedicado a mejorar mis habilidades de programación en el desarrollo web.</p>
+				<p class="only-tablet">Actualmente me encuentro preparado y en busca de un nuevo reto laboral como desarrollador web front-end para ampliar mis conocimientos en el campo de  la ingeniería.</p>
+			</div>
+		</div>
+		<div class="subgrid-right">
+			<h1 class="subtitle">HABILIDADES</h1>
+			<div class="skills">
+				<h5 class="skill">HTML & CSS</h5>
+				<h5 class="skill">JavaScript</h5>
+				<h5 class="skill">Python</h5>
+				<h5 class="skill">SQL</h5>
+			</div>
+			<div class="card">
+				<div class="skill-content"><h1 class="skill-icon"><i class="fa-brands fa-html5 fa-2xl"></i></h1>
+					<p class="skill-information">
+						Creación de contenido web usando atributos, propiedades y estructura de archivos acorde a las convenciones por la W3C.
+					</p>
+				</div>
+				<h3>Habilidad más reciente:</h3>
+				<p>Extrayendo, procesando y analizando datos con Python.</p>
+			</div>
+			<div class="center">
+				<a href="https://coursera.org/share/f61e2f036abd6cf9e0225c810a0f87f1" target="_blank">
+					<img src="./images/certificate6.png" alt="certificate" class="image-small">
+				</a>
+			</div>
+		</div>
+	</section>
+	<section id="center">
+		<h1 class="subtitle">PROYECTOS</h1>
+		<div class="center">
+			<div class="skills">
+					<h5 class="skill">Accordion</h5>
+					<h5 class="skill">Rating Component</h5>
+					<h5 class="skill">Static website</h5>
+			</div>
+		</div>
+		<div class="card">
+			<div class="skill-information">
+				<img src="./images/project1.jpg" alt="proyecto" class="image">	
+			</div>
+		</div>
+		<h1 class="subtitle">EXPERIENCIA PRINCIPAL</h1>
+		<div class="experience">
+			<img src="./images/soporte.jpg" alt="soporte">
+			<div class="experience-content">
+				<h3 class="experience-title">Services Desk (Analista de Soporte a Usuarios)</h3>
+				<div class="grid-content">
+					<div class="organizacion"><h3>Organización</h3><p>Inelectra S.A.C.A.</p></div>
+					<div class="duracion"><h3>Duración</h3><p>3 años (2017-2020)</p></div>
+					<div class="tipo"><h3>Tipo</h3><p>Híbrido</p></div>
+					<p class="responsabilidad">Atender las solicitudes y requerimientos de los usuarios mediante una plataforma de gestión de solicitudes para TI, manteniendo los procesos de negocios activos y sin interrupciones siguiendo los principios de la metodología ITIL para cumplir con los tiempos de atención deseados.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+<!-- 	<section id="right"></section> -->
+
+<script type="text/JavaScript">
+	const option = document.querySelectorAll('.skill');
+	let skillInfo = document.querySelectorAll('.skill-information');
+	let skillIcon = document.querySelector('.skill-icon')
+
+	for(let i = 0; i < option.length; i++) {
+		option[i].addEventListener('click', function(e) {
+			if(i === 0) {
+				skillInfo[0].innerHTML = 
+				`Creación de contenido web usando atributos, propiedades y estructura de archivos acorde a las convenciones por la W3C.`;
+				skillIcon.innerHTML = `<i class="fa-brands fa-html5 fa-2xl">`;
+				changeColorSkill(e);
+			} 
+
+			else if(i === 1) {
+				skillInfo[0].innerHTML = `Manipulación de elementos en el DOM, funciones, promesas, callbacks, async/await, sintaxis ES6 y frameworks como react, node js y express.`;
+				skillIcon.innerHTML = '<i class="fa-brands fa-js-square fa-2xl"></i>';
+				changeColorSkill(e);
+			}
+
+			else if(i === 2) {
+				skillInfo[0].innerHTML = `Arranque inicial de proyectos y apps en Djando configurando views, urls, templates, static files y models (En desarrollo proyecto Ecommerce).`;
+				skillIcon.innerHTML = '<i class="fa-brands fa-python fa-2xl"></i>';
+				changeColorSkill(e);
+			}
+
+			else if(i === 3) {
+				skillInfo[0].innerHTML = `Diseño de esquemas SQL, creación de tablas y manipulación de datos con SQL puro y Django models en SQLite`;
+				skillIcon.innerHTML = '<i class="fa-solid fa-database fa-2xl"></i>';
+				changeColorSkill(e);
+			}
+
+			else if(i === 4) {
+				skillInfo[1].innerHTML = `<img src="./images/project1.jpg" alt="proyecto" class="image">`;
+				changeColorProject(e);
+			}
+
+			else if(i === 5) {
+				skillInfo[1].innerHTML = `<img src="./images/project2.jpg" alt="proyecto" class="image">`;
+				changeColorProject(e);
+			}
+
+			else if(i === 6) {
+				skillInfo[1].innerHTML = `<img src="./images/project3.PNG" alt="proyecto" class="image">`;
+				changeColorProject(e);
+			}
+		});
+	}
+
+	function changeColorSkill(e) {
+		for(let j = 0; j < 4; j++) {
+			if (e.target == option[j]) {
+				option[j].style.color = 'var(--lastly)';
+			} else {
+				option[j].style.color = 'var(--primary)';
+			}	
+		}
+	}
+
+	function changeColorProject(e) {
+		for(let j = 4; j < option.length; j++) {
+			if (e.target == option[j]) {
+				option[j].style.color = 'var(--lastly)';
+				option[j].style.backgroundColor = 'var(--bg-color-dark)';
+			} else {
+				option[j].style.color = 'var(--secondary)';
+				option[j].style.backgroundColor = 'var(--lastly)';
+
+			}	
+		}
+	}
+</script>
+<script src="https://kit.fontawesome.com/2ef60001ec.js" crossorigin="anonymous"></script>
+</body>
+</html>
