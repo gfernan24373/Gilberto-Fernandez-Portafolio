@@ -1,0 +1,511 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,500&display=swap');
+:root {
+	--font: 'Montserrat', 'Ari5', 'sans-seri2';
+	--m-top: 20px;
+	--m-left: 40px;
+	--m-right: 20px;
+	--m-left-phone: 20px;
+	--m-left-tablet: 5px;
+/*light mode*/
+	/*--bg-color-dark: rgb(54,43,43);*/
+	--bg-color-dark: #1282A2;
+	--primary: #CDE7FF;
+	--secondary: #1282A2;
+	--lastly: white;
+/*dark mode*/
+	--bg-color-light: #f7f7ff;
+
+/*font sizes*/
+	/*DESKTOP*/
+	--title: 24px;
+	--subtitle: 28px;
+	--paragraph: 14px;
+}
+
+* {
+	box-sizing: border-box;
+	font-family: var(--font);
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: grid;
+	grid-template-areas: "left center center";
+	grid-template-columns: 1fr 1fr 1fr;
+	width: 100%;
+	height: 100vh;
+	background: var(--bg-color-light);
+}
+
+#left {
+	grid-area: left;
+	margin-right: 5px;
+}
+
+#center {
+	grid-area: center;
+	background-color: var(--secondary);
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	font-size: var(--title);
+	color: var(--primary);
+}
+
+button {
+	font-size: var(--title);
+	color: var(--primary);
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+nav {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 450px;
+	height: 65px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
+	background-color: var(--bg-color-dark);
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.nav-item {
+	/*margin-right: 40px;*/
+	position: relative;
+}
+
+nav .nav-item:nth-child(1):after {
+	content: "Github";
+	display: none;
+	font-size: var(--paragraph);
+	position: absolute;
+	top: 30px;
+	transform: translateX(-75%);
+}
+
+nav .nav-item:nth-child(1):hover::after {
+	display: inline-block;
+}
+
+nav .nav-item:nth-child(2):after {
+	content: "LinkedIn";
+	display: none;
+	font-size: var(--paragraph);
+	position: absolute;
+	top: 30px;
+	transform: translateX(-65%);
+}
+
+nav .nav-item:nth-child(2):hover::after {
+	display: inline-block;
+}
+
+nav .nav-item:nth-child(3):after {
+	content: "Whatsapp";
+	display: none;
+	font-size: var(--paragraph);
+	position: absolute;
+	top: 30px;
+	transform: translateX(-65%);
+}
+
+nav .nav-item:nth-child(3):hover::after {
+	display: inline-block;
+}
+
+nav .nav-item:nth-child(4):after {
+	content: "Email";
+	display: none;
+	font-size: var(--paragraph);
+	position: absolute;
+	top: 30px;
+	transform: translateX(-80%);
+}
+
+nav .nav-item:nth-child(4):hover::after {
+	display: inline-block;
+}
+
+nav .nav-item:nth-child(5):after {
+	content: "Blog";
+	display: none;
+	font-size: var(--paragraph);
+	position: absolute;
+	top: 30px;
+	transform: translateX(-95%);
+}
+
+nav .nav-item:nth-child(5):hover::after {
+	display: inline-block;
+}
+
+nav .nav-item:nth-child(6):after {
+	content: "Resume";
+	display: none;
+	font-size: var(--paragraph);
+	position: absolute;
+	transform: translateX(-70%);
+	top: 30px;
+}
+
+nav .nav-item:nth-child(6):hover::after {
+	display: inline-block;
+}
+
+.subtitle {
+	width: 400px;
+	font-size: var(--subtitle);
+	letter-spacing:16px;
+	color: var(--secondary);
+	margin-left: var(--m-left);
+}
+
+.only-tablet {
+	display: none;
+}
+
+.card {
+	width: 400px;
+	min-height: 110px;
+	color: var(--secondary);
+	margin: 10px auto 5px var(--m-left);
+	line-height: 1.5;
+	opacity: 0;
+	animation: effect 1500ms forwards;
+}
+
+.skills {
+	width: 450px;
+	display: flex;
+	justify-content: space-around;
+	color: var(--primary);
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
+	background-color: var(--bg-color-dark);
+	padding: 8px;
+}
+
+.skill {
+	cursor: pointer;
+}
+
+.skill-content {
+	min-height: 100px;
+	opacity: 0;
+	animation: effect 1500ms forwards;
+}
+
+.skill-icon {
+	color: var(--secondary);
+	float: left;
+	margin: 10px 10px auto auto;
+}
+
+.card:nth-child(3) {
+	width: 400px;
+	min-height: 100px;
+	color: var(--secondary);
+	margin: 5px auto auto var(--m-left);
+	line-height: 1.5;
+}
+
+.image {
+	width: 500px;
+	height: 260px;
+	text-align: center;
+	border-radius: 50px;
+	background: #e0e0e0;
+	box-shadow: 15px 15px 30px #ffffff;
+    margin-top: 10px;
+	opacity: 0;
+	animation: effect 850ms forwards;
+}
+
+@keyframes effect {
+	100% {
+		opacity: 1;
+	}
+}
+
+#center .subtitle:nth-child(1), #center .subtitle:nth-child(4) {
+	width: 100%;
+	letter-spacing:16px;
+	text-align: center;
+	color: var(--primary);
+	margin: 0;
+}
+
+#center .subtitle:nth-child(4) {
+	width: 100%;
+	letter-spacing:16px;
+	color: var(--primary);
+	margin: var(--m-top) 0 0 0;
+}
+
+#center .center .skills:nth-child(1) {
+	width: 80%;
+	background-color: transparent;
+}
+
+#center .card:nth-child(3) {
+	width: 100%;
+	text-align: center;
+	margin: 0;
+}
+
+#center .skills .skill:nth-child(-n+3) {
+	color: var(--secondary);
+	border: 3px solid var(--primary);
+	border-radius: 30px;
+	background-color: var(--lastly);
+	padding: 12px;
+}
+
+.image-small {
+	width: 160px;
+}
+
+.experience {
+	display: flex;
+	color: var(--lastly);
+}
+
+.experience-content {
+	width: 70%;
+}
+
+.experience-title {
+	margin-top: var(--m-top);
+}
+
+.grid-content {
+	display: grid;
+	grid-template-areas:
+	"organizacion responsabilidad"
+	"duracion responsabilidad"
+	"tipo responsabilidad";
+	grid-template-columns: 150px 2fr;
+	grid-template-rows: auto;
+	margin-top: 10px;
+}
+
+.organizacion {
+	grid-area: organizacion;
+}
+
+.duracion {
+	grid-area: duracion;
+}
+
+.tipo {
+	grid-area: tipo;
+}
+
+.responsabilidad {
+	grid-area: responsabilidad;
+	line-height: 1.5;
+	margin-left: 8px;
+}
+
+img[alt="soporte"] {
+	width: 150px;
+	height: 150px;
+	float: left;
+	border-radius: 50%;
+	margin: var(--m-top) var(--m-right) 0 var(--m-left);
+}
+
+@media only screen and (max-width: 414px) {
+
+	body {
+		grid-template-areas: "left" "center";
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+		width: 100%;
+		height: 100%;
+	}
+
+	nav {
+		width: 100%;
+		border-radius: 0;
+		position: fixed;
+		bottom: 0;
+		z-index: 1;
+	}
+
+	#left {
+		display: grid;
+		grid-template-rows: 200px auto;
+		height: 100vh;
+	}
+
+	.subgrid-left {
+		margin: 0;
+	}
+
+	.subgrid-right {
+		margin: 0;
+	}
+
+	.subtitle {
+		width: auto;
+		margin-left: var(--m-left-phone);
+		
+	}
+
+	.card {
+		width: 340px;
+		margin: 10px auto 10px var(--m-left-phone);
+	}
+
+	.skills {
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+		color: var(--primary);
+		background-color: var(--bg-color-dark);
+		padding: 8px;
+	}
+
+	.skill-information {
+		margin-bottom: 20px;
+	}
+
+	#center .center {
+		width: 100%;
+	}
+
+	#center .center .skills:nth-child(1) {
+		width: 100%;
+		background-color: transparent;
+		margin: 0;
+		padding: 4px;
+	}
+
+	.card:nth-child(3) {
+		width: 340px;
+		min-height: auto;
+		color: var(--secondary);
+		margin: 10px auto auto var(--m-left-phone);
+		line-height: 1.5;
+	}
+
+	.image {
+		width: 250px;
+		height: 150px;
+		text-align: center;
+		border-radius: 50px;
+		background: #e0e0e0;
+		box-shadow: 15px 15px 30px #ffffff;
+	    margin-top: var(--m-top);
+		opacity: 0;
+		animation: effect 850ms forwards;
+	}
+
+	.image-small {
+		width: 260px;
+		margin-top: 50px;
+	}
+
+	.experience {
+		display: block;
+		height: auto;
+	}
+
+	.experience-content {
+		width: auto;
+	}
+
+	.experience-title {
+		margin-top: var(--m-top);
+		position: relative;
+		top: var(--m-top);
+	}
+
+	img[alt="soporte"] {
+		float: left;
+		width: 100px;
+		height: 100px;
+		margin: auto 5px 10px var(--m-left-phone);
+	}
+
+	.grid-content {
+		clear: both;
+		display: grid;
+		grid-template-areas:
+		"organizacion duracion tipo"
+		"responsabilidad";
+		grid-template-columns: 1fr;
+		grid-template-rows: 80px 80px 180px;
+		margin-left: var(--m-left-phone);
+	}
+}
+
+@media only screen and (min-width: 415px and max-width: 768px) {
+	body {
+		grid-template-areas: "left" "center";
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+		height: 100%;
+	}
+	
+	nav {
+		width: 100%;
+		border-radius: 0;
+		position: fixed;
+		bottom: 0;
+		z-index: 1;
+	}
+
+	.only-tablet {
+		display: block;
+		margin-top: var(--m-top);
+	}
+
+	.subtitle, .card, #left .card:nth-last-child(2) {
+		width: 100%;
+		margin-left: var(--m-left-tablet);
+	}
+
+	.skills {
+		width: 100%;
+		border-radius: 30px;
+	}
+
+	#left {
+		display: grid;
+		grid-template-areas: "subgrid-left subgrid-right";
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto;
+	}
+
+	.subgrid-left {
+		grid-area: subgrid-left;
+		margin: 10px;
+	}
+
+	.subgrid-right {
+		grid-area: subgrid-right;
+		margin: 10px;
+	}
+
+	.experience {
+		height: 300px;
+	}
+
+	img[alt="soporte"] {
+		width: 100px;
+		height: 100px;
+	}
+}
